@@ -1,0 +1,17 @@
+{
+  "name": "learn",
+  "version": "0.5.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "server": "npm run server --prefix server",
+    "client": "npm run vite --prefix client",
+    "start": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}

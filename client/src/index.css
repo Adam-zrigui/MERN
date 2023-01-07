@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Sevillana&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fff;
+}
+body {
+  background-color: rgb(43, 42, 42);
+}
+
+.title {
+  font-family: 'Sevillana', cursive;
+}
+@layer components {
+  .button {
+@apply rounded-lg bg-blue-500 text-white hover:bg-blue-700 w-24 focus:bg-blue-900 font-extrabold h-10
+  }
+  .done {
+@apply    rounded-lg bg-purple-500 text-white hover:bg-purple-700 w-24 focus:bg-purple-900 font-extrabold h-10
+  }
+  hr {
+    @apply  w-[100%] opacity-25
+  }
+.input {
+@apply text-black outline-double rounded-md w-56 bg-slate-300 mt-6
+}
+.label {
+@apply font-bold text-black text-lg 
+}
+  .div {
+    @apply m-10 flex justify-center
+  }
+  .form {
+    @apply  bg-[#777777] flex flex-col justify-center w-96 items-center h-[105vh] rounded-md  
+  }
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+::selection {
+  background-color: black;
+  color:blue
+}
