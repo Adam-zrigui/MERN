@@ -1,4 +1,4 @@
-import { configureStore , applyMiddleware , combineReducers } from "@reduxjs/toolkit";
+import { configureStore , applyMiddleware , combineReducers  } from "@reduxjs/toolkit";
 import { PersistConfig , persistReducer, persistStore  } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import {setupListeners} from "@reduxjs/toolkit/query"

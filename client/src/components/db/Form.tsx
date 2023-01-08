@@ -1,10 +1,12 @@
 import { useState , SyntheticEvent } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { auth } from '../config/firebase'
+import { auth } from '../../config/firebase'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-
+import { useDispatch } from 'react-redux'
+import { addTask } from '../../redux/edit'
 export default function Form() {
+  const dispatch = useDispatch()
  const [user] = useAuthState(auth)
  const [Use , setUse] = useState<string>(user?.displayName as string)
  const [age , setAge] = useState<string>("")
@@ -18,6 +20,7 @@ const [github , setGit] = useState<string>('');
 const [posted, setPosted] = useState<boolean>(false)
  const sub  = (e : SyntheticEvent) => {
 e.preventDefault()
+
 setUse('')
 setEmail('')
 setAge('')
@@ -40,6 +43,7 @@ try {
    linkedIn,
    twitter,
    github,
+
   }).then((res) => {
     alert('user created successfully')
     setPosted(true)
@@ -54,7 +58,6 @@ try {
     <>
   <h1 className='text-center mt-12 font-bold text-2xl'>submit your form here:</h1>
 <div className="div">
-  
   <form action="" className="form" onSubmit={sub}>
   <label className="label">username: <br /></label>
     <input className='input' type="text" required defaultValue={user?.displayName as string} onChange={(e) => setUse(e.target.value)}  />

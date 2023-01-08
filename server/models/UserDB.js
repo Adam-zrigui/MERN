@@ -6,6 +6,11 @@ username: {
     required: true,
     unique: true
 },
+uid :{
+type: Number,
+
+
+},
 age: {
     type: Number,
     required: true,

@@ -2,17 +2,15 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { signInWithPopup } from 'firebase/auth'
 import { signOut } from 'firebase/auth'
-import { provider , auth } from '../config/firebase'
+import { provider , auth } from '../../config/firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import logo from '../assets/logo.png'
+import logo from '../../assets/logo.png'
 export default function Nav() {
  const [user] = useAuthState(auth)
   const signIn = async () => {
   await signInWithPopup(auth , provider)
 }
 const OUT = () => signOut(auth)
-
-
   return (
     <div className='h-[11.6vh] items-center flex justify-between bg-gray-400 rounded-md flex-row'>
 <div className="flex bg-gray-400">

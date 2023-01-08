@@ -1,14 +1,16 @@
 import { useAuthState } from 'react-firebase-hooks/auth'
+import { useSelector } from 'react-redux/es/exports'
 import {Route , Routes } from 'react-router-dom'
-import Footer from './components/Footer'
-import Form from './components/Form'
-import FourOFour from './components/FourOFour'
+import Footer from './components/everyCom/Footer'
+import Form from './components/db/Form'
+import FourOFour from './components/everyCom/FourOFour'
 import Home from './components/Home'
-import Nav from './components/Nav'
-import Posted from './components/Posted'
+import Nav from './components/everyCom/Nav'
+import Posted from './components/db/Posted'
 import { auth } from './config/firebase'
 function App() {
  const [user] = useAuthState(auth)
+ 
   return (
     <>
 <Nav />
