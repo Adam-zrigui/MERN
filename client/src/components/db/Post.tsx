@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { auth } from '../../config/firebase';
 import { deletePost } from '../../redux/edit';
 import { selectUser } from '../../redux/store';
-interface User {
+ export interface User {
     username: string;
     age: number;
     email: string;
@@ -21,6 +21,7 @@ interface User {
     linkedIn: string;
     github: string;
     uid: number;
+    status: string;
   }
 export default function Post({user}: {user: User}) {
     const [addictionState, setAddictionState] = useState<any>({});

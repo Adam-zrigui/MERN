@@ -6,13 +6,17 @@ import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { persister, store } from './redux/store'
 import { PersistGate } from 'redux-persist/integration/react'
+import {ApiProvider} from '@reduxjs/toolkit/query/react'
+import { userApi } from './redux/api'
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 <React.StrictMode>
  <BrowserRouter>
    <Provider store={store}>
-    <PersistGate loading={null} persistor={persister}>
+    <ApiProvider api={userApi}>
+     <PersistGate loading={null} persistor={persister}>
        <App />
-    </PersistGate>
+      </PersistGate>
+    </ApiProvider>
   </Provider>
  </BrowserRouter>
 </React.StrictMode>
