@@ -8,12 +8,13 @@ import { persister, store } from './redux/store'
 import { PersistGate } from 'redux-persist/integration/react'
 import {ApiProvider} from '@reduxjs/toolkit/query/react'
 import { userApi } from './redux/api'
+import Loading from './components/everyCom/Loading'
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 <React.StrictMode>
  <BrowserRouter>
    <Provider store={store}>
     <ApiProvider api={userApi}>
-     <PersistGate loading={null} persistor={persister}>
+     <PersistGate loading={<Loading />} persistor={persister}>
        <App />
       </PersistGate>
     </ApiProvider>

@@ -1,0 +1,20 @@
+version: '3'
+services:
+ api:
+   image: node:18
+   container_name: api
+   working_dir: /app
+   command: npm run server  
+   ports:
+     - "5500:5500"
+   volumes:
+     - "./server/:/app"
+ web:
+   image: node:18
+   container_name: web
+   working_dir: /src
+   command: npm run vite  
+   ports:
+     - "5172:5172"
+   volumes:
+     - "./client/:/src"

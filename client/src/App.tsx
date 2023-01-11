@@ -10,13 +10,12 @@ import Posted from './components/db/Posted'
 import { auth } from './config/firebase'
 function App() {
  const [user] = useAuthState(auth)
- 
   return (
     <>
 <Nav />
 <Routes>
 {user ? <>
-  <Route path='/' element={<Home />} />
+<Route path='/' element={<Home />} />
 <Route path='/posts' element={<Posted />} />
 <Route path='/submit' element={<Form />} />
 <Route path='*' element={<FourOFour />} />

@@ -31,11 +31,10 @@ export default function Post({user}: {user: User}) {
     const dispatch = useDispatch()
 const [Edit, setEdit] = useState(user);
     const submission  = useSelector(selectUser)
-    console.log(submission);
     const DelReq = (id: object) => {
         axios.delete(`http://localhost:5500/deletedb/${id}`)
       }
-      const UpName = (id : any) => {
+      const UpName = (id : object) => {
         axios.put("http://localhost:5500/updatedb", {
           id,
          namer,
