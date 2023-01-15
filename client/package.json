@@ -12,6 +12,8 @@
     "@mui/icons-material": "^5.11.0",
     "@reduxjs/toolkit": "^1.9.1",
     "axios": "^1.2.1",
+    "esbuild": "^0.16.17",
+    "esbuild-windows-64": "^0.15.18",
     "firebase": "^9.15.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
